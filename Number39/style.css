@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.magic {
+  background-color: black;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  border: 0;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 12px 20px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  letter-spacing: 1px;
+  box-shadow: 0 3px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+.magic:focus {
+  outline: none;
+}
+
+.magic:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+.boxes {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+  transition: 0.4s ease;
+}
+
+.boxes.big {
+  height: 600px;
+  width: 600px;
+}
+
+.boxes.big .box {
+  transform: rotateZ(360deg);
+}
+
+.box {
+  height: 125px;
+  width: 125px;
+  background-repeat: no-repeat;
+  background-size: 500px 500px;
+  position: relative;
+  background-image: url("https://media.giphy.com/media/UuwPRRkF81qivlwOjS/giphy.gif?cid=ecf05e47z1jw70hriziowv68bslehup34c6fi83wyauqjsuo&rid=giphy.gif&ct=g");
+  transition: 0.4s ease;
+}
+
+.box::after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  height: 100%;
+  width: 15px;
+  transform: skewY(45deg);
+}
+
+.box::before {
+  content: "";
+  background-color: black;
+  position: absolute;
+  bottom: -15px;
+  left: 8px;
+  width: 100%;
+  height: 15px;
+  transform: skewX(45deg);
+}
